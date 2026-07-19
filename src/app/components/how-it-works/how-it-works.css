@@ -1,0 +1,92 @@
+.section-heading{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-heading h2{
+    font-size:48px;
+    font-weight:700;
+    color:#08294d;
+    margin-bottom:15px;
+}
+
+.section-heading p{
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    font-size:17px;
+    line-height:1.8;
+}
+.how-it-works {
+    padding: 80px 20px;
+    background: #f8f8fb
+}
+
+.container {
+    max-width: 1400px;
+    margin: auto
+}
+
+.workflow {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(220px, 1fr));
+    gap: 20px
+}
+
+.workflow-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+    transition: .3s
+}
+
+.workflow-card:hover {
+    transform: translateY(-6px)
+}
+
+.card-header {
+    background: #ef004d;
+    color: #fff;
+    min-height: 100px;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px
+}
+
+.card-body {
+    flex: 1;
+    padding: 22px;
+    text-align: center
+}
+
+.card-header h3 {
+    font-size: 16px;
+    margin: 0
+}
+
+.card-body h4 {
+    font-size: 18px;
+    margin-bottom: 12px
+}
+
+.card-body p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666
+}
+
+@media(max-width:992px) {
+    .workflow {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:576px) {
+    .workflow {
+        grid-template-columns: 1fr
+    }
+}
