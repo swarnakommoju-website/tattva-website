@@ -16,9 +16,25 @@ import { CommonModule } from '@angular/common';
 export class Header {
 
   menuOpen = false;
+  submenuOpen = false;
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
+    if (!this.menuOpen) {
+      this.submenuOpen = false;
+    }
   }
 
+  closeMenu() {
+    this.menuOpen = false;
+    this.submenuOpen = false;
+  }
+
+  toggleSubmenu(event: Event) {
+    // Only intercept on mobile widths, where hover doesn't apply
+    if (window.innerWidth <= 768) {
+      event.preventDefault();
+      this.submenuOpen = !this.submenuOpen;
+    }
+  }
 }

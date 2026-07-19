@@ -7,57 +7,54 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="menu">
+    <nav class="menu" [class.active]="menuOpen">
 
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
         Home
       </a>
 
       <!-- Services Dropdown -->
-      <div class="dropdown">
+      <div class="dropdown" [class.open]="submenuOpen">
 
-        <a routerLink="/services" routerLinkActive="active">
-          Services
-          <span class="arrow">▼</span>
-        </a>
+        <a routerLink="/services" routerLinkActive="active" (click)="toggleSubmenu($event)">Services</a>
+
+        <span class="arrow" [class.rotated]="submenuOpen">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 15.5 5 8.5l1.4-1.4L12 12.7l5.6-5.6L19 8.5z" />
+          </svg>
+        </span>
 
         <div class="dropdown-content">
-
-          <a routerLink="/job-training">Job Training</a>
-
-          <a routerLink="/job-assistance">Job Assistance</a>
-
-          <a routerLink="/consulting">Consulting</a>
-
-          <a routerLink="/technology-consulting">
-            Technology Consulting
-          </a>
-
-          <a routerLink="/industry-specific">
-            Industry Specific
-          </a>
-
-          <a routerLink="/it-solutions">
-            IT Solutions
-          </a>
-
+          <a routerLink="/job-training" (click)="closeMenu()">Job Training</a>
+          <a routerLink="/job-assistance" (click)="closeMenu()">Job Assistance</a>
+          <a routerLink="/consulting" (click)="closeMenu()">Consulting</a>
+          <a routerLink="/technology-consulting" (click)="closeMenu()">Technology Consulting</a>
+          <a routerLink="/industry-specific" (click)="closeMenu()">Industry Specific</a>
+          <a routerLink="/it-solutions" (click)="closeMenu()">IT Solutions</a>
         </div>
 
       </div>
 
-      <a routerLink="/about" routerLinkActive="active">
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">
         About Us
       </a>
 
-      <a routerLink="/contact" routerLinkActive="active">
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
         Contact
       </a>
 
+      <!-- Book Demo now lives inside the menu so it shows in the mobile dropdown too -->
+      <button class="btn" (click)="closeMenu()">
+        Book Consultation
+      </button>
+
     </nav>
 
-    <button class="btn">
-      Book Consultation
-    </button>
+    <!-- Hamburger -->
+    <div class="hamburger" (click)="toggleMenu()">
+      <span *ngIf="!menuOpen">&#9776;</span>
+      <span *ngIf="menuOpen">&#10005;</span>
+    </div>
 
   </div>
 </header>

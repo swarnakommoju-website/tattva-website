@@ -3,13 +3,12 @@
 =========================== */
 
 .footer{
-
     background:linear-gradient(135deg,#0f172a,#1e293b);
-
     color:#ffffff;
+}
 
-    padding:70px 8% 20px;
-
+.footer-top{
+    padding:75px 8% 55px;
 }
 
 /* ===========================
@@ -17,73 +16,54 @@
 =========================== */
 
 .footer-container{
-
     display:grid;
-
-    grid-template-columns:1.5fr 1fr 1.3fr 1.3fr;
-
+    grid-template-columns:1.6fr 1fr 1.3fr 1.3fr;
     gap:60px;
-
     align-items:flex-start;
-
 }
 
 /* ===========================
-   LOGO
+   COMPANY / LOGO
 =========================== */
 
 .footer-logo{
-
-    width:180px;
-
-    margin-bottom:25px;
-
+    width:170px;
+    margin-bottom:22px;
+    /* filter:brightness(0) invert(1); */
 }
 
 .company p{
-
-    color:#cbd5e1;
-
-    line-height:1.9;
-
-    font-size:16px;
-
-    margin-bottom:35px;
-
+    color:#94a3b8;
+    line-height:1.85;
+    font-size:15px;
+    font-weight:400;
+    margin-bottom:28px;
 }
 
-/* ===========================
-   BUTTON
-=========================== */
+.socials{
+    display:flex;
+    gap:12px;
+}
 
-.contact-btn{
-
-    background:#ef4444;
-
+.socials a{
+    width:38px;
+    height:38px;
+    border-radius:10px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.1);
+    display:flex;
+    align-items:center;
+    justify-content:center;
     color:#fff;
-
-    border:none;
-
-    padding:14px 32px;
-
-    border-radius:8px;
-
-    font-size:16px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.3s;
-
+    font-size:15px;
+    text-decoration:none;
+    transition:.25s;
 }
 
-.contact-btn:hover{
-
-    background:#dc2626;
-
-    transform:translateY(-2px);
-
+.socials a:hover{
+    background:#ef4444;
+    border-color:#ef4444;
+    transform:translateY(-3px);
 }
 
 /* ===========================
@@ -91,143 +71,162 @@
 =========================== */
 
 .footer-column h3{
-
-    font-size:24px;
-
-    margin-bottom:28px;
-
+    font-family:'Plus Jakarta Sans', sans-serif;
+    font-size:19px;
+    margin-bottom:26px;
     font-weight:700;
-
     color:#fff;
+    position:relative;
+    padding-bottom:14px;
+}
 
+.footer-column h3::after{
+    content:'';
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:36px;
+    height:3px;
+    border-radius:3px;
+    background:#ef4444;
 }
 
 /* ===========================
    LISTS
 =========================== */
 
-/* Services Column */
-
-.footer-column ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.footer-column ul{
+    list-style:none;
+    margin:0;
+    padding:0;
 }
 
-.footer-column ul li {
-  margin: 0 0 18px 0;
-  padding: 0;
-  font-size: 16px;
-  line-height: 1.7;
-  color: #cbd5e1;
+.footer-column ul li{
+    margin:0 0 15px 0;
+    padding:0;
+    font-size:14.5px;
+    line-height:1.6;
+    color:#94a3b8;
+    font-weight:400;
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    transition:.25s;
 }
 
 .footer-column ul li a{
-
-    color:#cbd5e1;
-
+    color:inherit;
     text-decoration:none;
-
-    transition:.3s;
-
+    display:flex;
+    align-items:center;
+    gap:10px;
+    transition:.25s;
 }
 
-.footer-column ul li a:hover{
-
-    color:#f43f5e;
-
-    padding-left:6px;
-
+.footer-column ul li a:hover,
+.footer-column ul li:has(a):hover{
+    color:#fff;
+    transform:translateX(4px);
 }
+
 .arrow{
     color:#ef4444;
-    font-size:16px;
-    font-weight:bold;
-    margin-right:8px;
-    transition:0.3s;
+    font-size:11px;
+    margin-top:3px;
+    flex-shrink:0;
+    transition:.25s;
 }
 
-.footer-column li:hover .arrow,
-.office h4:hover .arrow{
-    margin-right:12px;
+.footer-column ul li:hover .arrow{
+    transform:translateX(2px);
 }
+
 /* ===========================
-   OFFICE
+   OFFICE CARDS
 =========================== */
 
-.office {
-  margin-top: 20px;
+.office{
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:14px;
+    padding:18px;
+    margin-bottom:16px;
+    transition:.25s;
 }
 
-.office:first-of-type {
-  margin-top: 0;
+.office:hover{
+    background:rgba(255,255,255,.07);
+    border-color:rgba(239,68,68,.3);
 }
 
-.office h4 {
-  margin: 0 0 12px 0;
-  font-size: 22px;
-  font-weight: 600;
-  color: #ffffff;
+.office h4{
+    margin:0 0 10px 0;
+    font-size:15px;
+    font-weight:700;
+    color:#fff;
+    display:flex;
+    align-items:center;
+    gap:8px;
 }
 
-.office p {
-  margin: 0;
-  font-size: 16px;
-  line-height: 2;
-  color: #cbd5e1;
+.office h4 i{
+    color:#ef4444;
+    font-size:14px;
 }
+
+.office p{
+    margin:0;
+    font-size:14px;
+    line-height:1.8;
+    color:#94a3b8;
+    font-weight:400;
+}
+
 /* ===========================
    BOTTOM
 =========================== */
 
 .footer-bottom{
-
-    margin-top:50px;
-
-    border-top:1px solid rgba(255,255,255,.12);
-
-    padding-top:20px;
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:center;
-
-    flex-wrap:wrap;
-
+    border-top:1px solid rgba(255,255,255,.08);
+    background:rgba(0,0,0,.15);
 }
 
-.footer-bottom span{
+.footer-bottom-inner{
+    width:min(92%,1300px);
+    margin:auto;
+    padding:22px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
 
+.footer-bottom-inner p{
+    color:#94a3b8;
+    font-size:13.5px;
+    margin:0;
+}
+
+.footer-bottom-inner strong{
     color:#ef4444;
-
-    font-weight:600;
-
+    font-weight:700;
 }
 
 .bottom-links{
-
     display:flex;
-
-    gap:30px;
-
+    gap:26px;
 }
 
 .bottom-links a{
-
     text-decoration:none;
-
-    color:#cbd5e1;
-
-    transition:.3s;
-
+    color:#94a3b8;
+    font-size:13.5px;
+    transition:.25s;
 }
 
 .bottom-links a:hover{
-
-    color:#f43f5e;
-
+    color:#ef4444;
 }
 
 /* ===========================
@@ -237,43 +236,40 @@
 @media(max-width:1100px){
 
 .footer-container{
-
-grid-template-columns:1fr 1fr;
-
+    grid-template-columns:1fr 1fr;
+    gap:45px 40px;
 }
 
 }
 
 @media(max-width:768px){
 
-.footer{
-
-padding:50px 25px;
-
+.footer-top{
+    padding:55px 6% 40px;
 }
 
 .footer-container{
-
-grid-template-columns:1fr;
-
-gap:40px;
-
+    grid-template-columns:1fr;
+    gap:38px;
+    text-align:left;
 }
 
-.footer-bottom{
+.footer-column h3::after{
+    left:0;
+}
 
-flex-direction:column;
+.socials{
+    justify-content:flex-start;
+}
 
-gap:15px;
-
-text-align:center;
-
+.footer-bottom-inner{
+    flex-direction:column;
+    text-align:center;
+    padding:20px 6%;
 }
 
 .bottom-links{
-
-justify-content:center;
-
+    justify-content:center;
 }
 
 }

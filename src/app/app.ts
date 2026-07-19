@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
+import { TopBar } from './components/top-bar/top-bar';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { Footer } from './components/footer/footer';
   imports: [
     RouterOutlet,
     Header,
-    Footer
+    Footer,
+    TopBar
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'
