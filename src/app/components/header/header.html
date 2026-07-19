@@ -1,20 +1,134 @@
 <header class="header">
+
   <div class="container">
 
+    <!-- Logo -->
+
     <div class="logo">
-      <img src="/images/logo.png" alt="Tattva Global Logo">
+
+      <a routerLink="/">
+
+        <img src="/images/logo.png"
+             alt="TGI Logo">
+
+      </a>
+
     </div>
 
-    <nav class="menu">
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <a routerLink="/services">Services</a>
-      <a routerLink="/contact">Contact</a>
+    <!-- Hamburger -->
+
+    <div
+      class="hamburger"
+      (click)="toggleMenu()">
+
+      ☰
+
+    </div>
+
+    <!-- Navigation -->
+
+    <nav
+      class="menu"
+      [class.active]="menuOpen">
+
+      <a
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}"
+        (click)="menuOpen=false">
+
+        Home
+
+      </a>
+
+      <div class="dropdown">
+
+        <a>
+
+          Services ▼
+
+        </a>
+
+        <div class="dropdown-content">
+
+          <a
+            routerLink="/job-training"
+            (click)="menuOpen=false">
+
+            Job Training
+
+          </a>
+
+          <a
+            routerLink="/job-assistance"
+            (click)="menuOpen=false">
+
+            Job Assistance
+
+          </a>
+
+          <a
+            routerLink="/consulting"
+            (click)="menuOpen=false">
+
+            Consulting
+
+          </a>
+
+          <a
+            routerLink="/technology-consulting"
+            (click)="menuOpen=false">
+
+            Technology Consulting
+
+          </a>
+
+          <a
+            routerLink="/industry-specific"
+            (click)="menuOpen=false">
+
+            Industry Specific
+
+          </a>
+
+          <a
+            routerLink="/it-solutions"
+            (click)="menuOpen=false">
+
+            IT Solutions
+
+          </a>
+
+        </div>
+
+      </div>
+
+      <a
+        routerLink="/about"
+        routerLinkActive="active"
+        (click)="menuOpen=false">
+
+        About Us
+
+      </a>
+
+      <a
+        routerLink="/contact"
+        routerLinkActive="active"
+        (click)="menuOpen=false">
+
+        Contact
+
+      </a>
+
+      <button class="btn">
+
+        Book Consultation
+
+      </button>
+
     </nav>
 
-    <button class="btn">
-      Book Consultation
-    </button>
-
   </div>
+
 </header>

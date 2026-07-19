@@ -1,74 +1,293 @@
+/* ==========================
+   ABOUT SECTION
+========================== */
+
 .about-section {
-    padding: 90px 10%;
+
+    padding: 80px 0;
+
     background: #f8f9fb;
+
 }
 
 .container {
-    max-width: 1100px;
+
+    width: min(92%, 1200px);
+
     margin: auto;
+
+}
+
+/* ==========================
+   CONTENT
+========================== */
+
+.content {
+
+    width: 100%;
+
 }
 
 .about-section h2 {
+
+    color: #ef4444;
+
     font-size: 42px;
-    color: #ff0000;
+
     margin-bottom: 25px;
+
     line-height: 1.3;
+
+    font-weight: 700;
+
 }
 
 .about-section p {
+
     font-size: 18px;
-    color: #010101;
+
+    color: #444;
+
     line-height: 1.9;
-    margin-bottom: 20px;
+
     text-align: justify;
+
+    margin-bottom: 25px;
+
 }
 
-.btn:hover {
-    background: #c40000;
-}
-
-@media (max-width: 768px) {
-
-    .about-section {
-        padding: 60px 8%;
-    }
-
-    .about-section h2 {
-        font-size: 32px;
-    }
-
-    .about-section p {
-        font-size: 16px;
-    }
-}
 .about-section h3 {
-    margin-top: 35px;
-    margin-bottom: 20px;
+
     font-size: 28px;
-    color: #222;
-    font-weight: 600;
+
+    color: #1e293b;
+
+    margin: 35px 0 25px;
+
 }
+
+/* ==========================
+   LIST
+========================== */
 
 .about-list {
+
     list-style: none;
+
+    margin: 0;
+
     padding: 0;
-    margin: 0 0 30px 0;
+
 }
 
 .about-list li {
+
     position: relative;
-    padding-left: 30px;
-    margin-bottom: 15px;
+
+    padding-left: 35px;
+
+    margin-bottom: 18px;
+
     font-size: 17px;
+
     color: #555;
-    line-height: 1.7;
+
+    line-height: 1.8;
+
 }
 
 .about-list li::before {
+
     content: "✔";
+
     position: absolute;
+
     left: 0;
-    color: #f60202;
+
+    top: 2px;
+
+    color: #ef4444;
+
     font-weight: bold;
-    font-size: 18px;
+
+}
+
+/* ==========================
+   BUTTON
+========================== */
+
+.buttons {
+
+    margin-top: 35px;
+
+}
+
+.btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #ef4444;
+
+    color: white;
+
+    padding: 14px 32px;
+
+    border-radius: 6px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.btn:hover {
+
+    background: #dc2626;
+
+}
+
+/* ==========================
+   TABLET
+========================== */
+
+@media (max-width:1024px) {
+
+    .about-section {
+
+        padding: 70px 25px;
+
+    }
+
+    .about-section h2 {
+
+        font-size: 36px;
+
+    }
+
+    .about-section h3 {
+
+        font-size: 24px;
+
+    }
+
+    .about-section p {
+
+        font-size: 17px;
+
+    }
+
+    .about-list li {
+
+        font-size: 16px;
+
+    }
+
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media (max-width:768px) {
+
+    .about-section {
+
+        padding: 60px 20px;
+
+    }
+
+    .about-section h2 {
+
+        font-size: 30px;
+
+        text-align: center;
+
+    }
+
+    .about-section h3 {
+
+        font-size: 22px;
+
+        text-align: center;
+
+    }
+
+    .about-section p {
+
+        font-size: 16px;
+
+        text-align: left;
+
+    }
+
+    .about-list li {
+
+        font-size: 15px;
+
+        padding-left: 30px;
+
+        line-height: 1.7;
+
+    }
+
+    .buttons {
+
+        text-align: center;
+
+    }
+
+    .btn {
+
+        width: 100%;
+
+        max-width: 260px;
+
+        text-align: center;
+
+    }
+
+}
+
+/* ==========================
+   SMALL MOBILE
+========================== */
+
+@media (max-width:480px) {
+
+    .about-section h2 {
+
+        font-size: 26px;
+
+    }
+
+    .about-section h3 {
+
+        font-size: 20px;
+
+    }
+
+    .about-section p {
+
+        font-size: 15px;
+
+    }
+
+    .about-list li {
+
+        font-size: 14px;
+
+    }
+
+    .btn {
+
+        padding: 12px 25px;
+
+        font-size: 15px;
+
+    }
+
 }

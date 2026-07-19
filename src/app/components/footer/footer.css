@@ -1,0 +1,279 @@
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer{
+
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+
+    color:#ffffff;
+
+    padding:70px 8% 20px;
+
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:1.5fr 1fr 1.3fr 1.3fr;
+
+    gap:60px;
+
+    align-items:flex-start;
+
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.footer-logo{
+
+    width:180px;
+
+    margin-bottom:25px;
+
+}
+
+.company p{
+
+    color:#cbd5e1;
+
+    line-height:1.9;
+
+    font-size:16px;
+
+    margin-bottom:35px;
+
+}
+
+/* ===========================
+   BUTTON
+=========================== */
+
+.contact-btn{
+
+    background:#ef4444;
+
+    color:#fff;
+
+    border:none;
+
+    padding:14px 32px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.contact-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-2px);
+
+}
+
+/* ===========================
+   HEADINGS
+=========================== */
+
+.footer-column h3{
+
+    font-size:24px;
+
+    margin-bottom:28px;
+
+    font-weight:700;
+
+    color:#fff;
+
+}
+
+/* ===========================
+   LISTS
+=========================== */
+
+/* Services Column */
+
+.footer-column ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 0 0 18px 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #cbd5e1;
+}
+
+.footer-column ul li a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.footer-column ul li a:hover{
+
+    color:#f43f5e;
+
+    padding-left:6px;
+
+}
+.arrow{
+    color:#ef4444;
+    font-size:16px;
+    font-weight:bold;
+    margin-right:8px;
+    transition:0.3s;
+}
+
+.footer-column li:hover .arrow,
+.office h4:hover .arrow{
+    margin-right:12px;
+}
+/* ===========================
+   OFFICE
+=========================== */
+
+.office {
+  margin-top: 20px;
+}
+
+.office:first-of-type {
+  margin-top: 0;
+}
+
+.office h4 {
+  margin: 0 0 12px 0;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.office p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 2;
+  color: #cbd5e1;
+}
+/* ===========================
+   BOTTOM
+=========================== */
+
+.footer-bottom{
+
+    margin-top:50px;
+
+    border-top:1px solid rgba(255,255,255,.12);
+
+    padding-top:20px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+}
+
+.footer-bottom span{
+
+    color:#ef4444;
+
+    font-weight:600;
+
+}
+
+.bottom-links{
+
+    display:flex;
+
+    gap:30px;
+
+}
+
+.bottom-links a{
+
+    text-decoration:none;
+
+    color:#cbd5e1;
+
+    transition:.3s;
+
+}
+
+.bottom-links a:hover{
+
+    color:#f43f5e;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:1100px){
+
+.footer-container{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.footer{
+
+padding:50px 25px;
+
+}
+
+.footer-container{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+.footer-bottom{
+
+flex-direction:column;
+
+gap:15px;
+
+text-align:center;
+
+}
+
+.bottom-links{
+
+justify-content:center;
+
+}
+
+}
