@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ServicesSection } from '../../components/services-section/services-section';
-import { HowItWorksComponent } from '../../components/how-it-works/how-it-works';
+import { HowItWorks } from '../../components/how-it-works/how-it-works';
 
 @Component({
   selector: 'app-services',
@@ -10,7 +10,7 @@ import { HowItWorksComponent } from '../../components/how-it-works/how-it-works'
   imports: [
     RouterLink,
     ServicesSection,
-    HowItWorksComponent
+    HowItWorks
   ],
   templateUrl: './services.html',
   styleUrl: './services.css'

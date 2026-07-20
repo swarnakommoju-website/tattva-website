@@ -1,92 +1,217 @@
-.section-heading{
-    text-align:center;
-    margin-bottom:60px;
+.section-heading {
+    text-align: center;
+    margin-bottom: 60px;
 }
 
-.section-heading h2{
-    font-size:48px;
-    font-weight:700;
-    color:#08294d;
-    margin-bottom:15px;
+.section-heading h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: #08294d;
+    margin-bottom: 14px;
 }
 
-.section-heading p{
-    max-width:700px;
-    margin:auto;
-    color:#666;
-    font-size:17px;
-    line-height:1.8;
+.section-heading p {
+    max-width: 650px;
+    margin: auto;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
 }
+
 .how-it-works {
-    padding: 80px 20px;
-    background: #f8f8fb
+    padding: 90px 20px;
+    background: #f8fafc;
 }
 
 .container {
-    max-width: 1400px;
-    margin: auto
+    max-width: 1200px;
+    margin: auto;
 }
 
-.workflow {
+/* ===================================
+   STEPS — DESKTOP
+=================================== */
+
+.steps {
+    position: relative;
     display: grid;
-    grid-template-columns: repeat(4, minmax(220px, 1fr));
-    gap: 20px
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
 }
 
-.workflow-card {
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 34px;
+    left: 60px;
+    right: 60px;
+    height: 1px;
+    background: #e2e8f0;
+    z-index: 0;
+}
+
+.step {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.step-visual {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.step-marker {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
     background: #fff;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
-    transition: .3s
-}
-
-.workflow-card:hover {
-    transform: translateY(-6px)
-}
-
-.card-header {
-    background: #ef004d;
-    color: #fff;
-    min-height: 100px;
-    padding: 18px;
+    border: 1px solid #e2e8f0;
+    color: #dc2626;
     display: flex;
     align-items: center;
-    gap: 12px
+    justify-content: center;
+    transition: border-color .25s ease, color .25s ease;
+    flex-shrink: 0;
 }
 
-.card-body {
-    flex: 1;
-    padding: 22px;
-    text-align: center
+.step-marker svg {
+    width: 26px;
+    height: 26px;
 }
 
-.card-header h3 {
-    font-size: 16px;
-    margin: 0
+.step-index {
+    display: block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #dc2626;
+    margin-bottom: 8px;
 }
 
-.card-body h4 {
+.step h4 {
     font-size: 18px;
-    margin-bottom: 12px
+    font-weight: 600;
+    color: #08294d;
+    margin: 0 0 10px;
 }
 
-.card-body p {
-    font-size: 14px;
+.step p {
+    font-size: 14.5px;
     line-height: 1.7;
-    color: #666
+    color: #64748b;
+    max-width: 240px;
+    margin: 0 auto;
 }
 
-@media(max-width:992px) {
-    .workflow {
-        grid-template-columns: repeat(2, 1fr)
+.step:hover .step-marker {
+    border-color: #dc2626;
+}
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media (max-width: 992px) {
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 50px;
+    }
+    .steps::before {
+        display: none;
     }
 }
 
-@media(max-width:576px) {
-    .workflow {
-        grid-template-columns: 1fr
+/* ===================================
+   MOBILE — description hidden, inline
+   index+title, self-sizing connector
+=================================== */
+
+@media (max-width: 576px) {
+    .how-it-works {
+        padding: 50px 18px;
+    }
+    .section-heading {
+        margin-bottom: 34px;
+    }
+    .section-heading h2 {
+        font-size: 26px;
+    }
+    .section-heading p {
+        font-size: 14.5px;
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        gap: 14px;
+    }
+
+    /* icon + connector column: the line grows to fill
+       whatever space is left in the row, so it always
+       reaches the next icon regardless of title length */
+    .step-visual {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 0;
+        align-self: stretch;
+    }
+
+    .step-visual::after {
+        content: '';
+        flex: 1;
+        width: 1px;
+        min-height: 18px;
+        background: #e2e8f0;
+        margin: 6px 0;
+    }
+
+    .step:last-child .step-visual::after {
+        display: none;
+    }
+
+    .step-marker {
+        width: 44px;
+        height: 44px;
+    }
+
+    .step-marker svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    /* index + title sit on one line, wrap together as a unit */
+    .step-text {
+        padding-bottom: 22px;
+    }
+
+    .step-index,
+    .step h4 {
+        display: inline;
+    }
+
+    .step-index {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        margin-right: 8px;
+        white-space: nowrap;
+    }
+
+    .step h4 {
+        font-size: 14px;
+        margin: 0;
+    }
+
+    /* hide the description on mobile — icon + step label + title only */
+    .step p {
+        display: none;
     }
 }

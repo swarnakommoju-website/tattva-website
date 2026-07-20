@@ -49,3 +49,59 @@
     cursor: pointer;
     font-size: 18px;
 }
+
+/* ===================================
+   TABLETS
+=================================== */
+
+@media (max-width: 992px) {
+    .content h1 {
+        font-size: 42px;
+    }
+    .content p {
+        font-size: 18px;
+    }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 576px) {
+    .screens {
+        height: 70vh;
+    }
+    .content {
+        left: 6%;
+        right: 6%;
+        max-width: none;
+    }
+    .content h1 {
+        font-size: 26px;
+        margin-bottom: 14px;
+    }
+    .content p {
+        font-size: 15px;
+        margin-bottom: 20px;
+    }
+    .content button {
+        padding: 12px 26px;
+        font-size: 15px;
+    }
+}
+
+/* ===================================
+   SMALL PHONES
+=================================== */
+
+@media (max-width: 400px) {
+    .screens {
+        height: 65vh;
+    }
+    .content h1 {
+        font-size: 22px;
+    }
+    .content p {
+        font-size: 14px;
+    }
+}

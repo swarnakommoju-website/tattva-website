@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Screens } from './screens/screens';
 import { AboutSection } from '../../components/about-section/about-section';
 import { ServicesSection } from '../../components/services-section/services-section';
-import { HowItWorksComponent } from '../../components/how-it-works/how-it-works';
+import { HowItWorks } from '../../components/how-it-works/how-it-works';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +12,7 @@ import { HowItWorksComponent } from '../../components/how-it-works/how-it-works'
     Screens,
     AboutSection,
     ServicesSection,
-    HowItWorksComponent
+    HowItWorks
   ],
   templateUrl: './home.html',
   styleUrl: './home.css'

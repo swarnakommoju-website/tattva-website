@@ -11,14 +11,9 @@
 
     <h1>{{ slides[currentSlide].title }}</h1>
 
-    <!-- Add this temporarily -->
-    <!-- <h2 style="color:yellow">
-      Image: {{ slides[currentSlide].image }}
-    </h2> -->
-
     <p>{{ slides[currentSlide].description }}</p>
 
-    <button>
+    <button (click)="callNow()">
       {{ slides[currentSlide].button }}
     </button>
 

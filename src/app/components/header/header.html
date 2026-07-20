@@ -3,7 +3,10 @@
 
     <!-- Logo -->
     <div class="logo">
-      <img src="/images/logo.png" alt="Tattva Global Logo">
+       <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">
+        <img src="/images/logo.png" alt="Tattva Global Logo">
+      </a>
+      
     </div>
 
     <!-- Navigation -->
@@ -18,7 +21,7 @@
 
         <a routerLink="/services" routerLinkActive="active" (click)="toggleSubmenu($event)">Services</a>
 
-        <span class="arrow" [class.rotated]="submenuOpen">
+        <!-- <span class="arrow" [class.rotated]="submenuOpen">
           <svg viewBox="0 0 24 24">
             <path d="M12 15.5 5 8.5l1.4-1.4L12 12.7l5.6-5.6L19 8.5z" />
           </svg>
@@ -31,7 +34,7 @@
           <a routerLink="/technology-consulting" (click)="closeMenu()">Technology Consulting</a>
           <a routerLink="/industry-specific" (click)="closeMenu()">Industry Specific</a>
           <a routerLink="/it-solutions" (click)="closeMenu()">IT Solutions</a>
-        </div>
+        </div> -->
 
       </div>
 
@@ -44,9 +47,12 @@
       </a>
 
       <!-- Book Demo now lives inside the menu so it shows in the mobile dropdown too -->
-      <button class="btn" (click)="closeMenu()">
+    
+       <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">
+          <button class="btn" (click)="closeMenu()">
         Book Consultation
       </button>
+      </a>
 
     </nav>
 

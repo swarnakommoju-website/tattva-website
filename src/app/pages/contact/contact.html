@@ -1,30 +1,22 @@
 <!-- Contact Banner -->
-
 <section class="contact-banner">
-
-    <img src="images\contact-banner.jpeg" alt="Contact Us" class="contact-banner-img">
-
+    <img src="images/contact-banner.jpeg" alt="Contact Us" class="contact-banner-img">
 </section>
 
 <!-- Existing Contact Section Starts Here -->
-
 <section class="contact-section">
-
     <!-- Your existing contact content -->
-
 </section>
-<section class="contact-cards">
 
+<section class="contact-cards">
 
 <!-- ==========================
       CONTACT FORM
 =========================== -->
-
 <section class="contact-form-section">
 
     <div class="section-heading">
         <h2>Drop Us A Line</h2>
-
         <div class="heading-line">
             <span></span>
             <span></span>
@@ -32,37 +24,96 @@
         </div>
     </div>
 
-    <form class="contact-form">
+    <form class="contact-form" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
 
-        <input
-            type="text"
-            placeholder="Your Name *"
-        >
+        <!-- Honeypot — invisible to real visitors, catches simple bots -->
+        <div class="hp-field" aria-hidden="true">
+            <label for="company">Leave this field blank</label>
+            <input type="text" id="company" formControlName="company" tabindex="-1" autocomplete="off">
+        </div>
 
-        <input
-            type="email"
-            placeholder="Email Address *"
-        >
+        <div class="field-group">
+            <input
+                type="text"
+                formControlName="name"
+                placeholder="Your Name *"
+                [class.error]="submitted && f['name'].invalid"
+            >
+            @if (submitted && f['name'].invalid) {
+                <span class="error-text">
+                    @if (f['name'].errors?.['required']) { Please enter your name. }
+                    @else if (f['name'].errors?.['minlength']) { Name's a bit too short. }
+                    @else if (f['name'].errors?.['invalidName']) { Letters only, please. }
+                </span>
+            }
+        </div>
 
-        <input
-            type="tel"
-            placeholder="Phone Number"
-        >
+        <div class="field-group">
+            <input
+                type="email"
+                formControlName="email"
+                placeholder="Email Address *"
+                [class.error]="submitted && f['email'].invalid"
+            >
+            @if (submitted && f['email'].invalid) {
+                <span class="error-text">
+                    @if (f['email'].errors?.['required']) { Please enter your email. }
+                    @else if (f['email'].errors?.['email']) { That email doesn't look right. }
+                </span>
+            }
+        </div>
 
-        <input
-            type="text"
-            placeholder="Subject"
-        >
+        <div class="field-group">
+            <input
+                type="tel"
+                formControlName="phone"
+                placeholder="Phone Number"
+                [class.error]="submitted && f['phone'].invalid"
+            >
+            @if (submitted && f['phone'].invalid) {
+                <span class="error-text">Please enter a valid phone number.</span>
+            }
+        </div>
 
-        <textarea
-            rows="7"
-            placeholder="Message Here *"
-        ></textarea>
+        <div class="field-group">
+            <input
+                type="text"
+                formControlName="subject"
+                placeholder="Subject"
+            >
+        </div>
 
-        <button type="submit">
-            Send Message
+        <div class="field-group field-group-full">
+            <textarea
+                rows="7"
+                formControlName="message"
+                placeholder="Message Here *"
+                [class.error]="submitted && f['message'].invalid"
+            ></textarea>
+            @if (submitted && f['message'].invalid) {
+                <span class="error-text">
+                    @if (f['message'].errors?.['required']) { Please write a message. }
+                    @else if (f['message'].errors?.['minlength']) { A few more words would help. }
+                </span>
+            }
+        </div>
+
+        @if (serverError) {
+            <div class="form-alert form-alert-error">{{ serverError }}</div>
+        }
+
+        @if (successMessage) {
+            <div class="form-alert form-alert-success">
+                Thanks — your message is on its way. We'll get back to you shortly.
+            </div>
+        }
+
+        <button type="submit" [disabled]="submitting">
+            {{ submitting ? 'Sending…' : 'Send Message' }}
         </button>
 
     </form>
+
+</section>
 
 </section>

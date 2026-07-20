@@ -118,10 +118,11 @@
 .contact{
     flex-direction:row;
     align-items:center;
-    justify-content:space-between;
+    /* justify-content:space-between; */
     flex-wrap:wrap;
     gap:16px;
     width:100%;
+    justify-content:center;
 }
 
 
