@@ -34,7 +34,7 @@ export class Screens implements OnInit, OnDestroy {
   currentSlide = 0;
   intervalId: any;
 
-  readonly phoneNumber = '+919014668060';
+  readonly phoneNumber = '+918501898060';
 
   ngOnInit() {
     this.intervalId = setInterval(() => {
